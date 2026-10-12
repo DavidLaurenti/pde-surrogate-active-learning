@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pde-surrogate"
+version = "0.1.0"
+description = "Neural surrogate of a parametric diffusion PDE with active learning and UQ"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "torch",
+    "scikit-learn",
+    "SALib",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "jupyterlab", "ipykernel"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
